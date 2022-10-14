@@ -1,2 +1,4 @@
 [Startup]
 WebServer=1
+[Actions]
+CreateApplication:Name=/app,NameSpace=USER,MatchRoles=:%All,RedirectEmptyPath=1,DispatchClass=Python.FPDF.Demo.Rest

@@ -52,4 +52,8 @@ COPY misc/kernels/irispython/* /home/irisowner/.local/share/jupyter/kernels/iris
 RUN mkdir /home/irisowner/.local/share/jupyter/kernels/objectscript
 COPY misc/kernels/objectscript/* /home/irisowner/.local/share/jupyter/kernels/objectscript/
 
+#Install the FPDF Library for this demo
+#Added to src/python/requirements.txt
+#RUN /usr/irissys/bin/irispip install --target /usr/irissys/mgr/python fpdf2
+
 ENTRYPOINT [ "/tini", "--", "/opt/irisapp/entrypoint.sh" ]

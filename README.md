@@ -1,4 +1,74 @@
-# 1. iris-python-template
+# PythonFPDF
+Using the PythonFPDF Library from Intersystems IRIS via the embedded Python funcionality to generatre PDF files.
+
+Note: This project is based on:
+
+* the template iris-python-template
+  * https://github.com/grongierisc/iris-python-template
+* The python FPDF2 Library
+  * https://pyfpdf.github.io/fpdf2/index.html
+  * https://pyfpdf.readthedocs.io/en/latest/index.html
+
+
+
+## 1- QuickStart (using docker)
+
+This demo is distributed as a linux docker container, which is the easiest way to get this demo up and running.
+
+#### Start the docker containers:
+
+```
+docker-compose up -d
+```
+
+#### REST:
+
+You can call the REST application that returns the PDF from a web browser:
+
+```
+http://127.0.0.1:52783/app/LabResults
+```
+
+And Following Calls return the PDFs from the FPDF Tutorial Page:
+
+```
+http://127.0.0.1:52783/app/Tutorial/2
+http://127.0.0.1:52783/app/Tutorial/3
+http://127.0.0.1:52783/app/Tutorial/4
+http://127.0.0.1:52783/app/Tutorial/5
+```
+
+#### IRIS Command Line
+
+Start an IRIS terminal Session
+
+```
+docker exec -it pythonfpdf-iris-1  iris session iris
+```
+
+And from IRIS, generate the PDFs:
+
+```
+USER> do ##class(Python.FPDF.Demo.LabResults).Run()
+USER> do ##class(Python.FPDF.Demo.Tutorials).Run()
+```
+
+The generated pdf files are available in the ./pdf host subdirectory
+
+ 
+
+## 2- Using Python FPDF
+
+### 2.1- Installation and usage
+
+
+
+### 2.2- Coding Tips
+
+ 
+
+
+
 Template project with various python code examples to be used with the InterSystems IRIS Community Edition docker container.
 
 Featuring :
